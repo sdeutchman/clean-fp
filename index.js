@@ -17,4 +17,5 @@ function calc_cart_total() {
   }
   set_cart_total_dom();
   update_shipping_icons();
+  update_tax_dom();
 }

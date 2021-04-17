@@ -1,7 +1,6 @@
-// ignore code below this line
 const set_cart_total_dom = () => {
   const cartTotalElement = document.getElementById("cart-total")
-  const newTotal = `$${(Math.round(shopping_cart_total * 100) / 100).toFixed(2).toString()}`;
+  const newTotal = format_total(shopping_cart_total);
   cartTotalElement.innerHTML = newTotal;
 }
 
@@ -36,3 +35,11 @@ const get_buy_buttons_dom = () => {
   })
 }
 
+const set_tax_dom = (tax) => {
+  shopping_cart_total += tax;
+  document.getElementById("cart-total").innerHTML = format_total(shopping_cart_total)
+}
+
+const format_total = (total) => {
+  return `$${(Math.round(total * 100) / 100).toFixed(2).toString()}`;
+}
