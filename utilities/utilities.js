@@ -13,6 +13,26 @@ document.querySelectorAll(".button").forEach(button => {
   })
 })
 
-let free_icon = document.createElement("img")
-free_icon.setAttribute("src", "https://www.iconsdb.com/icons/preview/red/free-badge-xxl.png");
-free_icon.classList.add("free-icon");
+
+
+const get_buy_buttons_dom = () => {
+  const buttonElements = Array.prototype.slice.call(document.querySelectorAll(".button"));
+  return buttonElements.map((current) => {
+    const { price, item } = current.dataset
+    const icon = document.getElementById(`free-shipping-${item}`)
+    return {
+      item: {
+        name: item,
+        price: Number.parseInt(10, price),
+
+      },
+      hide_free_shipping_icon: () => {
+        icon.style.visibility = "hidden";
+      },
+      show_free_shipping_icon: () => {
+        icon.style.visibility = "visible";
+      }
+    }
+  })
+}
+

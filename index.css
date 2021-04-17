@@ -61,6 +61,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
 }
 
 .price {
@@ -76,4 +77,13 @@ section {
   font-size: 1.5em;
   font-weight: 700;
   cursor: pointer;
+}
+
+.free-shipping-icon {
+  height: 100px;
+  position: relative;
+  bottom: 20px;
+  left: 20px;
+  transform: rotate(10deg);
+  visibility: hidden;
 }

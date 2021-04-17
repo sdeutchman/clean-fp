@@ -16,4 +16,5 @@ function calc_cart_total() {
     shopping_cart_total += item.price;
   }
   set_cart_total_dom();
+  update_shipping_icons();
 }
