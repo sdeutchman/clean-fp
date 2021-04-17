@@ -12,8 +12,6 @@ document.querySelectorAll(".button").forEach(button => {
   })
 })
 
-
-
 const get_buy_buttons_dom = () => {
   const buttonElements = Array.prototype.slice.call(document.querySelectorAll(".button"));
   return buttonElements.map((current) => {
