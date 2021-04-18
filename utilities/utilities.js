@@ -43,7 +43,7 @@ const set_cart_total_element = (newTotal) => {
 }
 
 const parse_price = (priceString) => {
-  return Number.parseInt(10, priceString.slice(1))
+  return Number.parseInt(priceString.slice(1), 10)
 }
 
 const get_price_string = (element) => {
