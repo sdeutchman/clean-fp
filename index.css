@@ -84,6 +84,6 @@ section {
   position: relative;
   bottom: 20px;
   left: 20px;
-  transform: rotate(10deg);
+  transform: rotate(30deg);
   visibility: hidden;
 }
