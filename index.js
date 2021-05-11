@@ -10,6 +10,17 @@ function add_item_to_cart(name, price) {
   calc_cart_total();                                // Update the total because the cart just changed
 }
 
+function calc_cart_total() {
+  shopping_cart_total = 0;
+  for (var i = 0; i < shopping_cart.length; i++) {
+    var item = shopping_cart[i];
+    shopping_cart_total += item.price;            // Sum all the prices
+  }
+  set_cart_total_dom();                           // Update the dom to reflect the new total
+  update_shipping_icons();                        // Run the update icons function
+  update_tax_dom();
+}
+
 function update_shipping_icons() {
   var buy_buttons = get_buy_buttons_dom();          // Get all the buy buttons on the page, then loop through them.
   for (var i = 0; i < buy_buttons.length; i++) {
@@ -24,15 +35,4 @@ function update_shipping_icons() {
 
 function update_tax_dom() {                         // Calculates tax and updates the DOM
   set_tax_dom(shopping_cart_total * 0.10);
-}
-
-function calc_cart_total() {
-  shopping_cart_total = 0;
-  for (var i = 0; i < shopping_cart.length; i++) {
-    var item = shopping_cart[i];
-    shopping_cart_total += item.price;            // Sum all the prices
-  }
-  set_cart_total_dom();                           // Update the dom to reflect the new total
-  update_shipping_icons();                        // Run the update icons function
-  update_tax_dom();
 }
